@@ -1,15 +1,27 @@
-# React Native Course Repository
+# React Native ENG 2025
 
-This repository contains assignments for the React Native course.
+This repository contains React Native assignments for the ENG 2025 course.
+
+## Repository Structure
+
+```
+ReactNativeENG2025/
+├── Assignment0/         # React Native setup with Expo
+├── Assignment1/         # Todo List application
+└── README.md           # This file
+```
 
 ## Assignments
 
-### Assignment 1: Todo List App ✓
-A Todo List application with task management features:
-- Two lists: In Progress and Completed tasks
+### Assignment 0 - Environment Setup
+Initial setup of React Native with Expo on macOS (Apple Silicon). Includes all necessary configurations and dependencies.
+
+### Assignment 1 - Todo List App
+A functional Todo List application with:
+- Two task lists: "In Progress" and "Completed"
 - Tab navigation between lists
-- Double-tap to move tasks between lists
-- Add new tasks functionality
+- Double-tap functionality to move tasks between lists
+- Clean, modern UI design
 
 ### Assignment 2: TBD
 ### Assignment 3: TBD
