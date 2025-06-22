@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, ScrollView, FlatList, TextInput, Alert } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('inProgress');
-  const [newTaskText, setNewTaskText] = useState('');
   const [inProgressTasks, setInProgressTasks] = useState([
     { id: '1', text: 'Learn React Native' },
     { id: '2', text: 'Build a Todo App' },
@@ -41,61 +40,16 @@ export default function App() {
     }
   };
 
-  const handleCreateTask = () => {
-    if (newTaskText.trim() === '') {
-      Alert.alert('Error', 'Please enter a task description');
-      return;
-    }
-
-    const newTask = {
-      id: Date.now().toString(),
-      text: newTaskText.trim(),
-    };
-
-    setInProgressTasks([...inProgressTasks, newTask]);
-    setNewTaskText('');
-  };
-
-  const handleDeleteTask = (taskId, fromList) => {
-    Alert.alert(
-      'Delete Task',
-      'Are you sure you want to delete this task?',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Delete',
-          style: 'destructive',
-          onPress: () => {
-            if (fromList === 'inProgress') {
-              setInProgressTasks(inProgressTasks.filter(t => t.id !== taskId));
-            } else {
-              setCompletedTasks(completedTasks.filter(t => t.id !== taskId));
-            }
-          },
-        },
-      ]
-    );
-  };
-
   const renderTask = ({ item, fromList }) => (
-    <View style={styles.taskContainer}>
-      <TouchableOpacity
-        onPress={() => handleTaskPress(item.id, fromList)}
-        style={styles.taskItem}
-        activeOpacity={0.7}
-      >
-        <Text style={[styles.taskText, fromList === 'completed' && styles.completedText]}>
-          {item.text}
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => handleDeleteTask(item.id, fromList)}
-        style={styles.deleteButton}
-        activeOpacity={0.7}
-      >
-        <Text style={styles.deleteButtonText}>×</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity
+      onPress={() => handleTaskPress(item.id, fromList)}
+      style={styles.taskItem}
+      activeOpacity={0.7}
+    >
+      <Text style={[styles.taskText, fromList === 'completed' && styles.completedText]}>
+        {item.text}
+      </Text>
+    </TouchableOpacity>
   );
 
   return (
@@ -107,25 +61,6 @@ export default function App() {
         <Text style={styles.title}>Todo List</Text>
       </View>
 
-      {/* Create Task Section */}
-      <View style={styles.createTaskContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Enter a new task..."
-          value={newTaskText}
-          onChangeText={setNewTaskText}
-          onSubmitEditing={handleCreateTask}
-          returnKeyType="done"
-        />
-        <TouchableOpacity
-          style={styles.addButton}
-          onPress={handleCreateTask}
-          activeOpacity={0.7}
-        >
-          <Text style={styles.addButtonText}>Add</Text>
-        </TouchableOpacity>
-      </View>
-
       {/* Tabs */}
       <View style={styles.tabContainer}>
         <TouchableOpacity
@@ -133,7 +68,7 @@ export default function App() {
           onPress={() => setActiveTab('inProgress')}
         >
           <Text style={[styles.tabText, activeTab === 'inProgress' && styles.activeTabText]}>
-            In Progress ({inProgressTasks.length})
+            In Progress
           </Text>
         </TouchableOpacity>
         
@@ -142,7 +77,7 @@ export default function App() {
           onPress={() => setActiveTab('completed')}
         >
           <Text style={[styles.tabText, activeTab === 'completed' && styles.activeTabText]}>
-            Completed ({completedTasks.length})
+            Completed
           </Text>
         </TouchableOpacity>
       </View>
@@ -173,7 +108,7 @@ export default function App() {
       {/* Instructions */}
       <View style={styles.instructions}>
         <Text style={styles.instructionText}>
-          Double-tap to move tasks • Tap × to delete tasks
+          Double-tap a task to move it between lists
         </Text>
       </View>
     </SafeAreaView>
@@ -200,36 +135,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
     textAlign: 'center',
-  },
-  createTaskContainer: {
-    flexDirection: 'row',
-    padding: 15,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-    alignItems: 'center',
-  },
-  textInput: {
-    flex: 1,
-    height: 45,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    paddingHorizontal: 15,
-    fontSize: 16,
-    backgroundColor: '#f9f9f9',
-  },
-  addButton: {
-    backgroundColor: '#4a90e2',
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    borderRadius: 8,
-    marginLeft: 10,
-  },
-  addButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
   },
   tabContainer: {
     flexDirection: 'row',
@@ -260,15 +165,10 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
-  taskContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
   taskItem: {
-    flex: 1,
     backgroundColor: '#fff',
     padding: 20,
+    marginBottom: 10,
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
@@ -283,25 +183,6 @@ const styles = StyleSheet.create({
   completedText: {
     textDecorationLine: 'line-through',
     color: '#999',
-  },
-  deleteButton: {
-    backgroundColor: '#ff6b6b',
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    elevation: 2,
-  },
-  deleteButtonText: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
   },
   emptyText: {
     textAlign: 'center',
