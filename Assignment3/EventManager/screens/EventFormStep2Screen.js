@@ -35,6 +35,7 @@ const EventFormStep2Screen = ({ navigation, route }) => {
     const completeEventData = {
       ...formData,
       ...data,
+      date: typeof formData.date === 'string' ? formData.date : formData.date.toISOString(), // Ensure date is serialized
     };
     
     dispatch(addEvent(completeEventData));
@@ -42,7 +43,12 @@ const EventFormStep2Screen = ({ navigation, route }) => {
   };
 
   const goBack = () => {
-    navigation.navigate('EventFormStep1', { formData });
+    navigation.navigate('EventFormStep1', { 
+      formData: {
+        ...formData,
+        date: typeof formData.date === 'string' ? formData.date : formData.date.toISOString()
+      }
+    });
   };
 
   return (

@@ -26,12 +26,18 @@ const EventFormStep1Screen = ({ navigation, route }) => {
     resolver: yupResolver(schema),
     defaultValues: {
       title: formData.title || '',
-      date: formData.date || new Date(),
+      date: formData.date ? (typeof formData.date === 'string' ? new Date(formData.date) : formData.date) : new Date(),
     },
   });
 
   const onSubmit = (data) => {
-    navigation.navigate('EventFormStep2', { formData: { ...formData, ...data } });
+    navigation.navigate('EventFormStep2', { 
+      formData: { 
+        ...formData, 
+        ...data,
+        date: data.date.toISOString() // Convert Date to string for navigation serialization
+      } 
+    });
   };
 
   return (
