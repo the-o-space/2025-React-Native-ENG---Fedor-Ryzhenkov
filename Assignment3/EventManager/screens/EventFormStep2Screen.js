@@ -9,10 +9,9 @@ import { Ionicons } from '@expo/vector-icons';
 
 const schema = yup.object({
   location: yup.string(),
-  description: yup.string().when('description', {
-    is: (value) => value && value.length > 0,
-    then: (schema) => schema.min(10, 'Description must be at least 10 characters'),
-    otherwise: (schema) => schema,
+  description: yup.string().test('min-length', 'Description must be at least 10 characters', function(value) {
+    if (!value || value.length === 0) return true; // Allow empty values
+    return value.length >= 10;
   }),
 });
 
