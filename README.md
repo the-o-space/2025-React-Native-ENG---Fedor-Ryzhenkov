@@ -8,6 +8,9 @@ This repository contains React Native assignments for the ENG 2025 course.
 ReactNativeENG2025/
 ├── Assignment0/         # React Native setup with Expo
 ├── Assignment1/         # Todo List application
+├── Assignment2/         # Food Delivery App
+├── Assignment3/         # Event Manager App
+├── Midterm/            # Personal Fitness Tracker
 └── README.md           # This file
 ```
 
@@ -23,15 +26,36 @@ A functional Todo List application with:
 - Double-tap functionality to move tasks between lists
 - Clean, modern UI design
 
-### Assignment 2: TBD
-### Assignment 3: TBD
+### Assignment 2 - Food Delivery App
+A restaurant food delivery application featuring:
+- Restaurant and meal browsing
+- Category-based filtering
+- Order management with Context API
+- Multi-screen navigation
+- Order confirmation and history
+
+### Assignment 3 - Event Manager
+A Redux-powered event management app with:
+- Multi-step form for event creation
+- Form validation with React Hook Form
+- Event list with CRUD operations
+- Redux Toolkit for state management
+- Date/time picker integration
+
+### Midterm - Personal Fitness Tracker
+A comprehensive fitness tracking application with:
+- Redux for workout data management
+- Context API for theme management (light/dark mode)
+- 4 main screens with bottom tab navigation
+- Workout logging with form validation
+- Workout history with detailed modal views
+- Settings with theme toggle and data reset
+
 ### Assignment 4: TBD
 ### Assignment 5: TBD
 ### Assignment 6: TBD
 ### Assignment 7: TBD
 ### Assignment 8: TBD
-
-### Midterm: TBD
 
 ## Getting Started
 
