@@ -51,7 +51,15 @@ A comprehensive fitness tracking application with:
 - Workout history with detailed modal views
 - Settings with theme toggle and data reset
 
-### Assignment 4: TBD
+### Assignment 4 - Product Catalog App
+An e-commerce product catalog application with:
+- Product grid display (2-column layout)
+- Real-time search filtering by product name
+- Product detail pages with image carousel
+- API integration with DummyJSON
+- Price display with discount calculations
+- Stock status indicators
+- Pull-to-refresh functionality
 ### Assignment 5: TBD
 ### Assignment 6: TBD
 ### Assignment 7: TBD
