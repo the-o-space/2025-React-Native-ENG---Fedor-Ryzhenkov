@@ -10,13 +10,17 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 
 const PhotoConfirmationScreen = ({ route, navigation }) => {
-  const { photo, photoType } = route.params;
+  const { photo, photoType, selfiePhoto, documentPhoto } = route.params;
 
   const handleAccept = () => {
-    // Navigate back to home with the photo
-    navigation.navigate('Home', {
-      ...(photoType === 'selfie' ? { selfiePhoto: photo } : { documentPhoto: photo })
-    });
+    // Prepare the photos to pass back
+    const updatedPhotos = {
+      selfiePhoto: photoType === 'selfie' ? photo : selfiePhoto,
+      documentPhoto: photoType === 'document' ? photo : documentPhoto,
+    };
+
+    // Navigate back to home with both photos
+    navigation.navigate('Home', updatedPhotos);
   };
 
   const handleRetake = () => {

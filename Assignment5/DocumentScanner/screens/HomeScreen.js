@@ -36,14 +36,16 @@ const HomeScreen = ({ navigation, route }) => {
   const handleCaptureSelfie = () => {
     navigation.navigate('Camera', { 
       initialType: 'front',
-      existingPhotos: { documentPhoto } 
+      selfiePhoto: selfiePhoto,
+      documentPhoto: documentPhoto 
     });
   };
 
   const handleCaptureDocument = () => {
     navigation.navigate('Camera', { 
       initialType: 'back',
-      existingPhotos: { selfiePhoto } 
+      selfiePhoto: selfiePhoto,
+      documentPhoto: documentPhoto 
     });
   };
 

@@ -7,26 +7,22 @@ import {
   Dimensions,
   Alert,
 } from 'react-native';
-import { Camera, CameraType } from 'expo-camera';
+import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import * as Brightness from 'expo-brightness';
 import { Ionicons } from '@expo/vector-icons';
 
 const { width, height } = Dimensions.get('window');
 
 const CameraScreen = ({ navigation, route }) => {
-  const [hasPermission, setHasPermission] = useState(null);
-  const [type, setType] = useState(
-    route.params?.initialType === 'front' ? CameraType.front : CameraType.back
+  const [permission, requestPermission] = useCameraPermissions();
+  const [facing, setFacing] = useState(
+    route.params?.initialType === 'front' ? 'front' : 'back'
   );
   const [previousBrightness, setPreviousBrightness] = useState(null);
   const cameraRef = useRef(null);
 
   useEffect(() => {
     (async () => {
-      // Request camera permission
-      const { status } = await Camera.requestCameraPermissionsAsync();
-      setHasPermission(status === 'granted');
-
       // Store current brightness
       const { brightness } = await Brightness.getBrightnessAsync();
       setPreviousBrightness(brightness);
@@ -43,7 +39,7 @@ const CameraScreen = ({ navigation, route }) => {
   useEffect(() => {
     // Adjust brightness based on camera type
     (async () => {
-      if (type === CameraType.front) {
+      if (facing === 'front') {
         // Set brightness to 100% for front camera
         await Brightness.setBrightnessAsync(1);
       } else if (previousBrightness !== null) {
@@ -51,10 +47,10 @@ const CameraScreen = ({ navigation, route }) => {
         await Brightness.setBrightnessAsync(previousBrightness);
       }
     })();
-  }, [type, previousBrightness]);
+  }, [facing, previousBrightness]);
 
-  const toggleCameraType = () => {
-    setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
+  const toggleCameraFacing = () => {
+    setFacing(current => (current === 'back' ? 'front' : 'back'));
   };
 
   const takePicture = async () => {
@@ -68,7 +64,9 @@ const CameraScreen = ({ navigation, route }) => {
         // Navigate to confirmation screen with photo data
         navigation.navigate('PhotoConfirmation', {
           photo: photo,
-          photoType: type === CameraType.front ? 'selfie' : 'document',
+          photoType: facing === 'front' ? 'selfie' : 'document',
+          selfiePhoto: route.params?.selfiePhoto,
+          documentPhoto: route.params?.documentPhoto,
         });
       } catch (error) {
         Alert.alert('Error', 'Failed to take picture');
@@ -77,7 +75,7 @@ const CameraScreen = ({ navigation, route }) => {
     }
   };
 
-  if (hasPermission === null) {
+  if (!permission) {
     return (
       <View style={styles.container}>
         <Text style={styles.message}>Requesting camera permission...</Text>
@@ -85,68 +83,74 @@ const CameraScreen = ({ navigation, route }) => {
     );
   }
 
-  if (hasPermission === false) {
+  if (!permission.granted) {
     return (
       <View style={styles.container}>
         <Text style={styles.message}>No access to camera</Text>
         <Text style={styles.submessage}>Please enable camera access in settings</Text>
+        <TouchableOpacity 
+          style={styles.permissionButton} 
+          onPress={requestPermission}
+        >
+          <Text style={styles.permissionButtonText}>Grant Permission</Text>
+        </TouchableOpacity>
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
-      <Camera style={styles.camera} type={type} ref={cameraRef}>
-        {/* Overlay for document alignment */}
-        <View style={styles.overlay}>
-          <View style={styles.overlayTop} />
-          <View style={styles.overlayMiddle}>
-            <View style={styles.overlaySide} />
-            <View style={styles.focusBox}>
-              <View style={styles.focusCorner} />
-              <View style={[styles.focusCorner, styles.topRight]} />
-              <View style={[styles.focusCorner, styles.bottomLeft]} />
-              <View style={[styles.focusCorner, styles.bottomRight]} />
-            </View>
-            <View style={styles.overlaySide} />
+      <CameraView style={styles.camera} facing={facing} ref={cameraRef} />
+      
+      {/* Overlay for document alignment */}
+      <View style={styles.overlay}>
+        <View style={styles.overlayTop} />
+        <View style={styles.overlayMiddle}>
+          <View style={styles.overlaySide} />
+          <View style={styles.focusBox}>
+            <View style={styles.focusCorner} />
+            <View style={[styles.focusCorner, styles.topRight]} />
+            <View style={[styles.focusCorner, styles.bottomLeft]} />
+            <View style={[styles.focusCorner, styles.bottomRight]} />
           </View>
-          <View style={styles.overlayBottom} />
+          <View style={styles.overlaySide} />
         </View>
+        <View style={styles.overlayBottom} />
+      </View>
 
-        {/* Instructions */}
-        <View style={styles.instructionContainer}>
-          <Text style={styles.instructionText}>
-            {type === CameraType.front 
-              ? 'Position your face within the frame' 
-              : 'Align your document within the frame'}
+      {/* Instructions */}
+      <View style={styles.instructionContainer}>
+        <Text style={styles.instructionText}>
+          {facing === 'front' 
+            ? 'Position your face within the frame' 
+            : 'Align your document within the frame'}
+        </Text>
+      </View>
+
+      {/* Camera controls */}
+      <View style={styles.controls}>
+        <TouchableOpacity style={styles.controlButton} onPress={toggleCameraFacing}>
+          <Ionicons name="camera-reverse" size={30} color="white" />
+          <Text style={styles.controlText}>
+            {facing === 'front' ? 'Document' : 'Selfie'}
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.captureButton} onPress={takePicture}>
+          <View style={styles.captureButtonInner} />
+        </TouchableOpacity>
+
+        <View style={styles.controlButton}>
+          <Ionicons 
+            name={facing === 'front' ? 'sunny' : 'sunny-outline'} 
+            size={30} 
+            color="white" 
+          />
+          <Text style={styles.controlText}>
+            {facing === 'front' ? '100%' : 'Auto'}
           </Text>
         </View>
-
-        {/* Camera controls */}
-        <View style={styles.controls}>
-          <TouchableOpacity style={styles.controlButton} onPress={toggleCameraType}>
-            <Ionicons name="camera-reverse" size={30} color="white" />
-            <Text style={styles.controlText}>
-              {type === CameraType.front ? 'Document' : 'Selfie'}
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.captureButton} onPress={takePicture}>
-            <View style={styles.captureButtonInner} />
-          </TouchableOpacity>
-
-          <View style={styles.controlButton}>
-            <Ionicons 
-              name={type === CameraType.front ? 'sunny' : 'sunny-outline'} 
-              size={30} 
-              color="white" 
-            />
-            <Text style={styles.controlText}>
-              {type === CameraType.front ? '100%' : 'Auto'}
-            </Text>
-          </View>
-        </View>
-      </Camera>
+      </View>
     </View>
   );
 };
@@ -174,7 +178,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   overlay: {
-    flex: 1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
   overlayTop: {
     flex: 1,
@@ -272,6 +280,18 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
     backgroundColor: '#fff',
+  },
+  permissionButton: {
+    backgroundColor: '#3498db',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 8,
+    marginTop: 20,
+  },
+  permissionButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
 
