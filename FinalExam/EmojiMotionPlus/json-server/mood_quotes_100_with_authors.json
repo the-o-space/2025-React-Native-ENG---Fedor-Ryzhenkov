@@ -1,0 +1,602 @@
+[
+    {
+      "id": 1,
+      "category": "Excited",
+      "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+      "author": "William Butler Yeats"
+    },
+    {
+      "id": 2,
+      "category": "Curious",
+      "quote": "I have no special talents. I am only passionately curious.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": 3,
+      "category": "Happy",
+      "quote": "Most folks are as happy as they make up their minds to be.",
+      "author": "Abraham Lincoln"
+    },
+    {
+      "id": 4,
+      "category": "Angry",
+      "quote": "Bitterness is like cancer. It eats upon the host.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": 5,
+      "category": "Happy",
+      "quote": "Happiness depends upon ourselves.",
+      "author": "Aristotle"
+    },
+    {
+      "id": 6,
+      "category": "Curious",
+      "quote": "Be less curious about people and more curious about ideas.",
+      "author": "Marie Curie"
+    },
+    {
+      "id": 7,
+      "category": "Happy",
+      "quote": "Happiness is not something ready made. It comes from your own actions.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 8,
+      "category": "Angry",
+      "quote": "Never go to bed mad. Stay up and fight.",
+      "author": "Phyllis Diller"
+    },
+    {
+      "id": 9,
+      "category": "Excited",
+      "quote": "The more you praise and celebrate your life, the more there is in life to celebrate.",
+      "author": "Oprah Winfrey"
+    },
+    {
+      "id": 10,
+      "category": "Curious",
+      "quote": "Curiosity is the wick in the candle of learning.",
+      "author": "William Arthur Ward"
+    },
+    {
+      "id": 11,
+      "category": "Happy",
+      "quote": "For every minute you are angry you lose sixty seconds of happiness.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 12,
+      "category": "Angry",
+      "quote": "Bitterness is like cancer. It eats upon the host.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": 13,
+      "category": "Angry",
+      "quote": "Speak when you are angry and you will make the best speech you will ever regret.",
+      "author": "Ambrose Bierce"
+    },
+    {
+      "id": 14,
+      "category": "Happy",
+      "quote": "The purpose of our lives is to be happy.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 15,
+      "category": "Angry",
+      "quote": "Bitterness is like cancer. It eats upon the host.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": 16,
+      "category": "Angry",
+      "quote": "Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.",
+      "author": "Mark Twain"
+    },
+    {
+      "id": 17,
+      "category": "Angry",
+      "quote": "For every minute you remain angry, you give up sixty seconds of peace of mind.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 18,
+      "category": "Angry",
+      "quote": "Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.",
+      "author": "Mark Twain"
+    },
+    {
+      "id": 19,
+      "category": "Excited",
+      "quote": "The more you praise and celebrate your life, the more there is in life to celebrate.",
+      "author": "Oprah Winfrey"
+    },
+    {
+      "id": 20,
+      "category": "Angry",
+      "quote": "Bitterness is like cancer. It eats upon the host.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": 21,
+      "category": "Excited",
+      "quote": "Nothing great was ever achieved without enthusiasm.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 22,
+      "category": "Excited",
+      "quote": "Your excitement is a powerful force—use it well.",
+      "author": "Unknown"
+    },
+    {
+      "id": 23,
+      "category": "Curious",
+      "quote": "Curiosity is one of the most permanent and certain characteristics of a vigorous intellect.",
+      "author": "Samuel Johnson"
+    },
+    {
+      "id": 24,
+      "category": "Sad",
+      "quote": "Sadness flies away on the wings of time.",
+      "author": "Jean de La Fontaine"
+    },
+    {
+      "id": 25,
+      "category": "Excited",
+      "quote": "The more you praise and celebrate your life, the more there is in life to celebrate.",
+      "author": "Oprah Winfrey"
+    },
+    {
+      "id": 26,
+      "category": "Happy",
+      "quote": "For every minute you are angry you lose sixty seconds of happiness.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 27,
+      "category": "Angry",
+      "quote": "For every minute you remain angry, you give up sixty seconds of peace of mind.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 28,
+      "category": "Angry",
+      "quote": "Bitterness is like cancer. It eats upon the host.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": 29,
+      "category": "Angry",
+      "quote": "Bitterness is like cancer. It eats upon the host.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": 30,
+      "category": "Angry",
+      "quote": "Never go to bed mad. Stay up and fight.",
+      "author": "Phyllis Diller"
+    },
+    {
+      "id": 31,
+      "category": "Angry",
+      "quote": "Bitterness is like cancer. It eats upon the host.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": 32,
+      "category": "Happy",
+      "quote": "Happiness is not something ready made. It comes from your own actions.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 33,
+      "category": "Angry",
+      "quote": "Never go to bed mad. Stay up and fight.",
+      "author": "Phyllis Diller"
+    },
+    {
+      "id": 34,
+      "category": "Sad",
+      "quote": "The word 'happy' would lose its meaning if it were not balanced by sadness.",
+      "author": "Carl Jung"
+    },
+    {
+      "id": 35,
+      "category": "Happy",
+      "quote": "The purpose of our lives is to be happy.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 36,
+      "category": "Angry",
+      "quote": "Speak when you are angry and you will make the best speech you will ever regret.",
+      "author": "Ambrose Bierce"
+    },
+    {
+      "id": 37,
+      "category": "Happy",
+      "quote": "Most folks are as happy as they make up their minds to be.",
+      "author": "Abraham Lincoln"
+    },
+    {
+      "id": 38,
+      "category": "Excited",
+      "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+      "author": "William Butler Yeats"
+    },
+    {
+      "id": 39,
+      "category": "Curious",
+      "quote": "Curiosity is one of the most permanent and certain characteristics of a vigorous intellect.",
+      "author": "Samuel Johnson"
+    },
+    {
+      "id": 40,
+      "category": "Angry",
+      "quote": "For every minute you remain angry, you give up sixty seconds of peace of mind.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 41,
+      "category": "Sad",
+      "quote": "Sadness flies away on the wings of time.",
+      "author": "Jean de La Fontaine"
+    },
+    {
+      "id": 42,
+      "category": "Curious",
+      "quote": "I have no special talents. I am only passionately curious.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": 43,
+      "category": "Angry",
+      "quote": "Bitterness is like cancer. It eats upon the host.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": 44,
+      "category": "Curious",
+      "quote": "Curiosity is one of the most permanent and certain characteristics of a vigorous intellect.",
+      "author": "Samuel Johnson"
+    },
+    {
+      "id": 45,
+      "category": "Sad",
+      "quote": "The word 'happy' would lose its meaning if it were not balanced by sadness.",
+      "author": "Carl Jung"
+    },
+    {
+      "id": 46,
+      "category": "Angry",
+      "quote": "Never go to bed mad. Stay up and fight.",
+      "author": "Phyllis Diller"
+    },
+    {
+      "id": 47,
+      "category": "Curious",
+      "quote": "Curiosity is one of the most permanent and certain characteristics of a vigorous intellect.",
+      "author": "Samuel Johnson"
+    },
+    {
+      "id": 48,
+      "category": "Angry",
+      "quote": "Speak when you are angry and you will make the best speech you will ever regret.",
+      "author": "Ambrose Bierce"
+    },
+    {
+      "id": 49,
+      "category": "Sad",
+      "quote": "Every human walks around with a certain kind of sadness.",
+      "author": "Brad Pitt"
+    },
+    {
+      "id": 50,
+      "category": "Excited",
+      "quote": "Enthusiasm moves the world.",
+      "author": "Arthur Balfour"
+    },
+    {
+      "id": 51,
+      "category": "Curious",
+      "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": 52,
+      "category": "Happy",
+      "quote": "Most folks are as happy as they make up their minds to be.",
+      "author": "Abraham Lincoln"
+    },
+    {
+      "id": 53,
+      "category": "Angry",
+      "quote": "Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.",
+      "author": "Mark Twain"
+    },
+    {
+      "id": 54,
+      "category": "Excited",
+      "quote": "Nothing great was ever achieved without enthusiasm.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 55,
+      "category": "Curious",
+      "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": 56,
+      "category": "Happy",
+      "quote": "Most folks are as happy as they make up their minds to be.",
+      "author": "Abraham Lincoln"
+    },
+    {
+      "id": 57,
+      "category": "Happy",
+      "quote": "Happiness depends upon ourselves.",
+      "author": "Aristotle"
+    },
+    {
+      "id": 58,
+      "category": "Happy",
+      "quote": "For every minute you are angry you lose sixty seconds of happiness.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 59,
+      "category": "Happy",
+      "quote": "Happiness is not something ready made. It comes from your own actions.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 60,
+      "category": "Sad",
+      "quote": "Don't cry because it's over, smile because it happened.",
+      "author": "Dr. Seuss"
+    },
+    {
+      "id": 61,
+      "category": "Excited",
+      "quote": "Enthusiasm moves the world.",
+      "author": "Arthur Balfour"
+    },
+    {
+      "id": 62,
+      "category": "Curious",
+      "quote": "Be less curious about people and more curious about ideas.",
+      "author": "Marie Curie"
+    },
+    {
+      "id": 63,
+      "category": "Curious",
+      "quote": "I have no special talents. I am only passionately curious.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": 64,
+      "category": "Excited",
+      "quote": "Do not wait to strike till the iron is hot; but make it hot by striking.",
+      "author": "William Butler Yeats"
+    },
+    {
+      "id": 65,
+      "category": "Angry",
+      "quote": "Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.",
+      "author": "Mark Twain"
+    },
+    {
+      "id": 66,
+      "category": "Sad",
+      "quote": "Every human walks around with a certain kind of sadness.",
+      "author": "Brad Pitt"
+    },
+    {
+      "id": 67,
+      "category": "Excited",
+      "quote": "Your excitement is a powerful force—use it well.",
+      "author": "Unknown"
+    },
+    {
+      "id": 68,
+      "category": "Sad",
+      "quote": "Every human walks around with a certain kind of sadness.",
+      "author": "Brad Pitt"
+    },
+    {
+      "id": 69,
+      "category": "Angry",
+      "quote": "Speak when you are angry and you will make the best speech you will ever regret.",
+      "author": "Ambrose Bierce"
+    },
+    {
+      "id": 70,
+      "category": "Happy",
+      "quote": "The purpose of our lives is to be happy.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 71,
+      "category": "Excited",
+      "quote": "Enthusiasm moves the world.",
+      "author": "Arthur Balfour"
+    },
+    {
+      "id": 72,
+      "category": "Happy",
+      "quote": "Happiness is not something ready made. It comes from your own actions.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 73,
+      "category": "Happy",
+      "quote": "For every minute you are angry you lose sixty seconds of happiness.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 74,
+      "category": "Happy",
+      "quote": "Happiness depends upon ourselves.",
+      "author": "Aristotle"
+    },
+    {
+      "id": 75,
+      "category": "Curious",
+      "quote": "I have no special talents. I am only passionately curious.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": 76,
+      "category": "Angry",
+      "quote": "Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.",
+      "author": "Mark Twain"
+    },
+    {
+      "id": 77,
+      "category": "Angry",
+      "quote": "Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.",
+      "author": "Mark Twain"
+    },
+    {
+      "id": 78,
+      "category": "Curious",
+      "quote": "I have no special talents. I am only passionately curious.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": 79,
+      "category": "Angry",
+      "quote": "Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.",
+      "author": "Mark Twain"
+    },
+    {
+      "id": 80,
+      "category": "Excited",
+      "quote": "Your excitement is a powerful force—use it well.",
+      "author": "Unknown"
+    },
+    {
+      "id": 81,
+      "category": "Happy",
+      "quote": "Most folks are as happy as they make up their minds to be.",
+      "author": "Abraham Lincoln"
+    },
+    {
+      "id": 82,
+      "category": "Excited",
+      "quote": "Nothing great was ever achieved without enthusiasm.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 83,
+      "category": "Excited",
+      "quote": "Your excitement is a powerful force—use it well.",
+      "author": "Unknown"
+    },
+    {
+      "id": 84,
+      "category": "Happy",
+      "quote": "Most folks are as happy as they make up their minds to be.",
+      "author": "Abraham Lincoln"
+    },
+    {
+      "id": 85,
+      "category": "Sad",
+      "quote": "Tears come from the heart and not from the brain.",
+      "author": "Leonardo da Vinci"
+    },
+    {
+      "id": 86,
+      "category": "Angry",
+      "quote": "Never go to bed mad. Stay up and fight.",
+      "author": "Phyllis Diller"
+    },
+    {
+      "id": 87,
+      "category": "Angry",
+      "quote": "For every minute you remain angry, you give up sixty seconds of peace of mind.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": 88,
+      "category": "Angry",
+      "quote": "Bitterness is like cancer. It eats upon the host.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": 89,
+      "category": "Curious",
+      "quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": 90,
+      "category": "Happy",
+      "quote": "Happiness depends upon ourselves.",
+      "author": "Aristotle"
+    },
+    {
+      "id": 91,
+      "category": "Happy",
+      "quote": "Happiness is not something ready made. It comes from your own actions.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 92,
+      "category": "Sad",
+      "quote": "Every human walks around with a certain kind of sadness.",
+      "author": "Brad Pitt"
+    },
+    {
+      "id": 93,
+      "category": "Happy",
+      "quote": "Most folks are as happy as they make up their minds to be.",
+      "author": "Abraham Lincoln"
+    },
+    {
+      "id": 94,
+      "category": "Curious",
+      "quote": "I have no special talents. I am only passionately curious.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": 95,
+      "category": "Sad",
+      "quote": "Every human walks around with a certain kind of sadness.",
+      "author": "Brad Pitt"
+    },
+    {
+      "id": 96,
+      "category": "Sad",
+      "quote": "Tears come from the heart and not from the brain.",
+      "author": "Leonardo da Vinci"
+    },
+    {
+      "id": 97,
+      "category": "Happy",
+      "quote": "Happiness is not something ready made. It comes from your own actions.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 98,
+      "category": "Happy",
+      "quote": "The purpose of our lives is to be happy.",
+      "author": "Dalai Lama"
+    },
+    {
+      "id": 99,
+      "category": "Curious",
+      "quote": "Be less curious about people and more curious about ideas.",
+      "author": "Marie Curie"
+    },
+    {
+      "id": 100,
+      "category": "Excited",
+      "quote": "The more you praise and celebrate your life, the more there is in life to celebrate.",
+      "author": "Oprah Winfrey"
+    }
+  ]
