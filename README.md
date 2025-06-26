@@ -60,7 +60,16 @@ An e-commerce product catalog application with:
 - Price display with discount calculations
 - Stock status indicators
 - Pull-to-refresh functionality
-### Assignment 5: TBD
+
+### Assignment 5 - Document Scanner App
+A document and identity scanning application with:
+- Smart camera with front/back toggle
+- Document alignment overlay guides
+- Automatic brightness boost for selfies
+- Emergency contact selection from device
+- Photo preview and retake options
+- Submission summary with timestamp
+- Permission handling for camera and contacts
 ### Assignment 6: TBD
 ### Assignment 7: TBD
 ### Assignment 8: TBD
