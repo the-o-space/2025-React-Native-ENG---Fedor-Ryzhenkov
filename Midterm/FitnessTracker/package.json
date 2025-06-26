@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
-    "@react-native-community/datetimepicker": "^8.4.2",
+    "@react-native-community/datetimepicker": "^8.3.0",
     "@react-navigation/bottom-tabs": "^7.4.2",
     "@react-navigation/native": "^7.1.14",
     "@reduxjs/toolkit": "^2.8.2",
@@ -19,7 +19,7 @@
     "react": "19.0.0",
     "react-hook-form": "^7.58.1",
     "react-native": "0.79.4",
-    "react-native-gesture-handler": "^2.26.0",
+    "react-native-gesture-handler": "^2.24.0",
     "react-native-modal": "^14.0.0-rc.1",
     "react-native-modal-datetime-picker": "^18.0.0",
     "react-native-safe-area-context": "^5.5.0",
@@ -27,7 +27,8 @@
     "react-redux": "^9.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@react-native-community/cli": "latest"
   },
   "private": true
 }

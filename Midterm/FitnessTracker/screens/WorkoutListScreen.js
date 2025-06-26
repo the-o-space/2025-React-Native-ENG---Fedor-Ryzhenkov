@@ -160,7 +160,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   emptyText: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '700',
     color: theme.colors.textSecondary,
     marginTop: 16,
     marginBottom: 8,
@@ -180,7 +180,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   modalTitle: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: '700',
     color: theme.colors.text,
     marginBottom: 24,
     textAlign: 'center',

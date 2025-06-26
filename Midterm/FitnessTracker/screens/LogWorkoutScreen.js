@@ -146,7 +146,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   headerTitle: {
     fontSize: 28,
-    fontWeight: 'bold',
+    fontWeight: '700',
     color: theme.colors.text,
     marginTop: 16,
     marginBottom: 8,

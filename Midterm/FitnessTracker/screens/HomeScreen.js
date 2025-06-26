@@ -58,7 +58,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   welcomeText: {
     fontSize: 28,
-    fontWeight: 'bold',
+    fontWeight: '700',
     color: theme.colors.text,
     textAlign: 'center',
     marginBottom: 30,
@@ -92,7 +92,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   statNumber: {
     fontSize: 36,
-    fontWeight: 'bold',
+    fontWeight: '700',
     color: theme.colors.primary,
     marginTop: 10,
   },
