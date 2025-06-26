@@ -31,6 +31,7 @@ const HomeScreen = ({ navigation }) => {
   const accelerometerSubscription = useRef(null);
   const gyroscopeSubscription = useRef(null);
   const lastShakeTime = useRef(0);
+  const isDetectingRef = useRef(true);
 
   useEffect(() => {
     startSensors();
@@ -46,7 +47,7 @@ const HomeScreen = ({ navigation }) => {
 
     // Subscribe to accelerometer for shake detection
     accelerometerSubscription.current = Accelerometer.addListener(({ x, y, z }) => {
-      if (!isDetecting) return;
+      if (!isDetectingRef.current) return;
 
       const acceleration = Math.sqrt(x * x + y * y + z * z);
       const currentTime = Date.now();
@@ -60,7 +61,7 @@ const HomeScreen = ({ navigation }) => {
 
     // Subscribe to gyroscope for tilt detection
     gyroscopeSubscription.current = Gyroscope.addListener(({ x, y, z }) => {
-      if (!isDetecting) return;
+      if (!isDetectingRef.current) return;
 
       // Detect tilts based on rotation rates
       if (x > 2) { // Tilt forward
@@ -83,6 +84,8 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const handleDoubleTap = () => {
+    if (!isDetectingRef.current) return;
+    
     const now = Date.now();
     const DOUBLE_TAP_DELAY = 300;
     
@@ -94,9 +97,10 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const handleMoodDetection = async (mood) => {
-    if (!isDetecting || loading) return;
+    if (!isDetectingRef.current || loading) return;
 
     setIsDetecting(false);
+    isDetectingRef.current = false;
     setLoading(true);
     
     // Haptic feedback
@@ -125,10 +129,8 @@ const HomeScreen = ({ navigation }) => {
       });
     } finally {
       setLoading(false);
-      // Re-enable detection after 3 seconds
-      setTimeout(() => {
-        setIsDetecting(true);
-      }, 3000);
+      // Don't re-enable detection automatically
+      // User must press "Try Again" to detect new emotions
     }
   };
 
@@ -136,6 +138,7 @@ const HomeScreen = ({ navigation }) => {
     setCurrentMood(null);
     setQuote(null);
     setIsDetecting(true);
+    isDetectingRef.current = true;
   };
 
   return (
